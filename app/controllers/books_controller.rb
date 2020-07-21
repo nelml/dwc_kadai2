@@ -20,8 +20,8 @@ class BooksController < ApplicationController
     if book.update(book_params)
 
       redirect_to book_path(book.id), notice: 'Book was successfully updated.'
-      else
-      redirect_to books_path, notice: "error!  I couldn't do it ..."
+      # else
+      # render books_path, notice: "error!  I couldn't do it ..."
     end
   end
   def edit
@@ -36,8 +36,8 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     if book.destroy
       redirect_to books_path, notice: 'Book was successfully destroyed.'
-      else
-      redirect_to books_path, notice: "error!  I couldn't do it ..."
+      # else
+      # render books_path, notice: "error!  I couldn't do it ..."
     end
   end
 
