@@ -24,6 +24,19 @@
 	color: green;
 }
 
+.sb {
+	display: inline-block;
+}
+
+.sb_t {
+	margin-top: 10px;
+}
+
+.btn {
+	padding: 1px 6px;
+
+}
+
 /*link style*/
 
 a {
@@ -91,6 +104,14 @@ table {
 
 /*edit style*/
 
+.edit_body {
+	font-family: verdana, arial, helvetica, sans-serif;
+	line-height: 18px;
+	color: #333;
+	font-size: 13px;
+	margin: 33px;
+}
+
 /*show style*/
 .show_body {
 	font-family: verdana, arial, helvetica, sans-serif;
@@ -100,10 +121,11 @@ table {
 	margin: 33px;
 }
 
-.show_body p {
+.shp {
 	margin: 33px;
 }
 
 .bold {
 	font-weight: bold;
 }
+

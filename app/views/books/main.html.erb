@@ -1,4 +1,9 @@
 <body class="books_body">
+	<% if flash[:notice] %>
+	<div class="flash">
+		<%= flash[:notice] %>
+	</div>
+	<% end %>
 	<header>
 		<h1 class="books_head">Books</h1>
 	</header>
@@ -15,7 +20,13 @@
 			<tr>
 				<th class="book_list book_title"><%= book.title %></th>
 				<th class="book_list book_body"><%= book.body %></th>
-				<th class="book_list book_link"><%= link_to 'Show', book_path(book.id) %></th>
+				<th class="book_list book_link"><%= link_to 'Show ', book_path(book.id) %></th>
+				<th class="book_list book_link">
+					<%= link_to 'Edit', edit_book_path(book.id) %>
+				</th>
+				<th class ="book_list book_link">
+					<%= link_to 'Delete', destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure ?" %>
+				</th>
 			</tr>
 			<% end %>
 	</table>
@@ -25,6 +36,6 @@
 		<div><%= f.text_field :title %></div>
 		<h4 class="nb">Body</h4>
 		<div><%= f.text_area :body %></div><br>
-		<div><%= f.submit 'Create Book' %></div>
+		<div><%= f.submit 'Create Book', class:"btn" %></div>
 	<% end %>
 </body>

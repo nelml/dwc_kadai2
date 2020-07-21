@@ -4,13 +4,14 @@
 		<%= flash[:notice] %>
 	</div>
 <% end %>
-
-
-<p>
+<p class="shp">
 	<span class="bold">Title: </span><%= @book.title %>
 </p>
-<p>
+<p class="shp">
 	<span class="bold">Body: </span><%= @book.body %>
 </p>
+<div class="sb sb_t"><%= link_to 'Edit', edit_book_path(params[:id]) %></div>
+	<p class="sb"> | </p>
+	<div class="sb"><%= link_to 'Back', books_path %></div>
 </body>
 

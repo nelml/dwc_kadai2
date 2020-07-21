@@ -1,2 +1,15 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<body class="edit_body">
+	<h1 class="books_head">Editing Book</h1>
+	<%= form_for(@book, url:"/books/#{@book.id}") do |f| %>
+	<main>
+		<h4 class="nb">Title</h4>
+		<div><%= f.text_field :title %></div>
+		<h4 class="nb">Body</h4>
+		<div><%= f.text_area :body %></div><br>
+		<div><%= f.submit 'Update Book' %></div>
+	<% end %>
+	</main>
+	<div class="sb sb_t"><%= link_to 'Show', book_path(params[:id]) %></div>
+	<p class="sb"> | </p>
+	<div class="sb"><%= link_to 'Back', books_path %></div>
+</body>
