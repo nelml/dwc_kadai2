@@ -73,6 +73,11 @@ th {
 
 .book_list, .nb {
 	font-weight: lighter;
+	text-align: left;
+}
+
+.book_title {
+
 }
 
 h4 {
