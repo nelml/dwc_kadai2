@@ -1,0 +1,16 @@
+<body class="show_body">
+<% if flash[:notice] %>
+	<div class="flash">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+
+
+<p class="">
+	<span class="bold">Title: </span><%= @book.title %>
+</p>
+<p class="">
+	<span class="bold">Body: </span><%= @book.body %>
+</p>
+</body>
+
