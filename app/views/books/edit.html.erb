@@ -1,12 +1,31 @@
 <body class="edit_body">
 	<h1 class="books_head">Editing Book</h1>
+
+	<% if @book.errors.any? %>
+		<div id="error_explanation">
+			<p class="er_ti"><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</p>
+
+			<ul class="er_bd">
+			<% @book.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 	<%= form_for(@book, url:"/books/#{@book.id}") do |f| %>
 	<main>
-		<h4 class="nb">Title</h4>
-		<div><%= f.text_field :title %></div>
-		<h4 class="nb">Body</h4>
-		<div><%= f.text_area :body %></div><br>
-		<div><%= f.submit 'Update Book' %></div>
+		<div class="form_bt">
+			<p class="nb"><span class="<%= "txred" if @book.errors.include?(:title) %>">Title</span></p>
+			<div class="<%= "field_red" if @book.errors.include?(:title) %>"><%= f.text_field :title %></div>
+		</div>
+		<div class="form_bt">
+			<p class="nb"><span class="<%= "txred" if @book.errors.include?(:body) %>">Body</span></p>
+			<div class="<%= "field_red" if @book.errors.include?(:body) %>"><%= f.text_area :body %></div><br>
+		</div>
+		<div>
+			<%= f.submit 'Update Book' %>
+		</div>
 	<% end %>
 	</main>
 	<div class="sb sb_t"><%= link_to 'Show', book_path(params[:id]) %></div>
